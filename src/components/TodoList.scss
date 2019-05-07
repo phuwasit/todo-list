@@ -1,14 +1,31 @@
 .todo-list {
   margin: 10px 0;
   border-top: 1px solid #eee;
+}
 
-  &__item {
-    display: flex;
-    padding: 15px;
-    border-bottom: 1px solid #eee;
+.todo-list-item {
+  display: flex;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
 
-    &--title {
-      flex: 1;
+  &--title {
+    flex: 5;
+  }
+
+  &__actions {
+    width: 70px;
+    text-align: center;
+
+    .button {
+      display: inline-block;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      font-size: 16px;
+
+      &--cancel {
+        margin-top: 10px;
+      }
     }
   }
 }
