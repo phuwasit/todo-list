@@ -1,0 +1,31 @@
+.todo-progress {
+  position: relative;
+  margin: 10px 0;
+  height: 20px;
+  background: #eee;
+  border-radius:10px;
+
+
+  &__bar {
+    height:20px; 
+	  position:absolute;
+	  border-radius:10px;
+    width:0%;
+    background-color: #4CAF50;
+  }
+
+  &__percent {
+    position:absolute;
+    top: 0;
+    width: 100%;
+    font-size: .9em;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}

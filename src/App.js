@@ -1,11 +1,16 @@
-import React from 'react';
+import React from 'react'
+
+import { TodoProvider } from './contexts/TodoContext'
+import TodoApp from './components/TodoApp'
 
 function App() {
   return (
-    <div className="App">
-      <h1>To Do List</h1>
+    <div className="container">
+      <TodoProvider>
+        <TodoApp />
+      </TodoProvider>
     </div>
-  );
+  )
 }
 
 export default App;
