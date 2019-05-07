@@ -1,25 +1,21 @@
 import React, { useContext } from 'react'
-
 import './TodoList.scss'
-
 import { TodoContext } from '../contexts/TodoContext'
+import TodoListItem from './TodoListItem'
 
 const TodoList = () => {
-  const store = useContext(TodoContext)
-  if (store.todos.length) {
+  const { state: todos } = useContext(TodoContext)
+  if (todos.length) {
     return (
       <div className="todo-list">
-        <ul className="todo-list__list">
-          {store.todos.map((todo) => (
-            <li className="todo-list__item" key={todo.id}>
-              <div className="checkbox">
-                <input type="checkbox" />
-                <label html-for="checkbox"></label>
-              </div>
-              {todo.text}
-            </li>
-          ))}
-        </ul>
+        {todos.map((todo) => (
+          <TodoListItem
+            key={todo.id}
+            id={todo.id}
+            title={todo.title}
+            completed={todo.completed}
+          />
+        ))}
       </div>
     )
   }

@@ -24,6 +24,7 @@ code {
 }
 
 .checkbox {
+  width: 20px;
   position: relative;
   display: inline-block;
   margin-right: 10px;
@@ -55,7 +56,7 @@ code {
   }
   
   input[type="checkbox"] {
-    visibility: hidden;
+   visibility: hidden;
   }
   
   input[type="checkbox"]:checked + label {
