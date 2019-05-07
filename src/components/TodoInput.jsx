@@ -20,6 +20,7 @@ const TodoInput = () => {
       className="input"
       value={value}
       onChange={handleChange}
+      placeholder="Task..."
     />
   )
 }
