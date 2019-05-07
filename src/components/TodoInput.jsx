@@ -1,8 +1,13 @@
 import React from 'react'
 
+import useInputState from '../hooks/useInputState'
+
 const TodoInput = () => {
+  const [value, handleChange, reset] = useInputState("")
+
   const handleEnterPress = (e) => {
     if (e.key === 'Enter') {
+      reset()
     }
   }
 
@@ -10,11 +15,10 @@ const TodoInput = () => {
     <input
       onKeyPress={handleEnterPress}
       className="input"
-      value={''}
-      onChange={() => { }}
+      value={value}
+      onChange={handleChange}
     />
   )
 }
-
 
 export default TodoInput
