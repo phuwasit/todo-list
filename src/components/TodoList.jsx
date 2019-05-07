@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import './TodoList.scss'
-import { TodoContext } from '../contexts/TodoContext'
+import { TodosContext } from '../contexts/TodosContext'
 import TodoListItem from './TodoListItem'
 
 const TodoList = () => {
-  const { state: todos } = useContext(TodoContext)
+  const { todos } = useContext(TodosContext)
   if (todos.length) {
     return (
       <div className="todo-list">

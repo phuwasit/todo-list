@@ -1,15 +1,16 @@
 import React, { useContext } from 'react'
 
-import { TodoContext } from '../contexts/TodoContext'
+import { TodosContext } from '../contexts/TodosContext'
 import useInputState from '../hooks/useInputState'
+import * as types from '../constants/types'
 
 const TodoInput = () => {
-  const { dispatch } = useContext(TodoContext);
+  const { dispatch } = useContext(TodosContext);
   const [value, handleChange, reset] = useInputState("")
 
   const handleEnterPress = (e) => {
     if (e.key === 'Enter') {
-      dispatch({ type: "ADD", title: value });
+      dispatch({ type: types.ADD_TODO, title: value });
       reset()
     }
   }

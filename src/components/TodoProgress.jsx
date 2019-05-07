@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import './TodoProgress.scss'
-import { TodoContext } from '../contexts/TodoContext'
+import { TodosContext } from '../contexts/TodosContext'
 
 const TodoProgress = () => {
-  const { state: todos } = useContext(TodoContext)
+  const { todos } = useContext(TodosContext)
   let percent = 0
 
   if (todos.length > 0) {
