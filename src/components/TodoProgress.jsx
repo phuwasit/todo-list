@@ -4,10 +4,12 @@ import { TodoContext } from '../contexts/TodoContext'
 
 const TodoProgress = () => {
   const { state: todos } = useContext(TodoContext)
-  const completed = todos.reduce((total, todo) => todo.completed ? total + 1 : total, 0)
-  const percent = Math.ceil(completed / todos.length * 100)
+  let percent = 0
 
-  console.log(completed)
+  if (todos.length > 0) {
+    const completed = todos.reduce((total, todo) => todo.completed ? total + 1 : total, 0)
+    percent = Math.ceil(completed / todos.length * 100)
+  }
 
   return (
     <div className="todo-progress">
