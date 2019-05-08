@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
-import { TodosContext } from '../contexts/TodosContext'
+import { TodoContext } from '../contexts/TodoContext'
 import useInputState from '../hooks/useInputState'
 import * as types from '../constants/types'
 
 const TodoListItem = ({ id, title, toggle }) => {
-  const { dispatch } = useContext(TodosContext)
+  const { dispatch } = useContext(TodoContext)
   const [value, handleChange, reset] = useInputState(title)
 
   const handleEnterPress = (e) => {

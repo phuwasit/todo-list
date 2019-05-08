@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
 import './TodoList.scss'
-import { TodosContext } from '../contexts/TodosContext'
+import { TodoContext } from '../contexts/TodoContext'
 import useToggleState from '../hooks/useToggleState'
 import TodoListItemEdit from './TodoListItemEdit'
 import * as types from '../constants/types'
 
 const TodoListItem = ({ id, title, completed }) => {
-  const { dispatch } = useContext(TodosContext)
+  const { dispatch } = useContext(TodoContext)
   const [isEditing, toggle] = useToggleState(false)
 
   return (

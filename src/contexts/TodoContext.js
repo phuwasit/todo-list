@@ -6,9 +6,9 @@ import visibilityFilterReducer from '../reduces/visibilityFilter'
 
 import useLocalStorageState from '../hooks/useLocalStorageState'
 
-export const TodosContext = createContext()
+export const TodoContext = createContext()
 
-export const TodosProvider = ({ children }) => {
+export const TodoProvider = ({ children }) => {
   let initialTodos = [
     {
       id: 1,
@@ -29,8 +29,8 @@ export const TodosProvider = ({ children }) => {
   useEffect(() => setTodos(todosState), [setTodos, todosState])
 
   return (
-    <TodosContext.Provider value={{ todos: todosState, filter: filterState, dispatch }} >
+    <TodoContext.Provider value={{ todos: todosState, filter: filterState, dispatch }} >
       {children}
-    </TodosContext.Provider >
+    </TodoContext.Provider >
   )
 }
